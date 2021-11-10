@@ -1,0 +1,105 @@
+<html>
+  <style>
+    td {border-radius: 10%; text-align: center; font-family: Arial, Helvetica, sans-serif;};
+    </style>
+<body>
+  
+
+    <table border="1" align="center" width="500" height="300">
+        <tr>
+            <td style='background-color: red;color: white;'>DOM</td>
+            <td>SEG</td>
+            <td>TER</td>
+            <td>QUA</td>
+            <td>QUI</td>
+            <td>SEX</td>
+            <td>SAB</td>
+        </tr>
+<script language="javascript">
+
+var umaData, ano, mes, d, corfnt, corfdo, data, aleatorio;
+
+ano = parseInt(window.prompt("Qual ano?"));
+mes = parseInt(window.prompt("Qual mes? (em números)"));
+
+umaData = new Date();
+umaData.setDate(1);
+umaData.setMonth(mes - 1);
+umaData.setFullYear(ano);
+document.write("<h1 align='center'>");
+switch (mes)
+   {
+     case 1: document.writeln("Janeiro"); aleatorio = 31; break;
+     case 2: document.writeln("Fevereiro"); 
+     if(ano % 4 == 0){
+     aleatorio = 29;
+     }
+     else{
+     aleatorio= 28;}
+     if (ano % 100 == 0) {
+      aleatorio = 28  
+     }
+     if (ano % 400 == 0) {
+       aleatorio = 29
+     }
+     break;
+     case 3: document.writeln("Março");aleatorio = 31; break;
+     case 4: document.writeln("Abril");aleatorio = 30; break;
+     case 5: document.writeln("Maio");aleatorio = 31; break;
+     case 6: document.writeln("Junho");aleatorio = 30; break;
+     case 7: document.writeln("Julho");aleatorio = 31; break;
+     case 8: document.writeln("Agosto");aleatorio = 31; break;
+     case 9: document.writeln("Setembro");aleatorio = 30; break;
+     case 10: document.writeln("Outubro");aleatorio = 31; break;
+     case 11: document.writeln("Novembro");aleatorio = 30; break;
+     case 12: document.writeln("Dezembro");aleatorio = 31; break;
+   }
+document.write(" / " + ano + "</h1>");
+document.write("<br>");
+
+
+
+for(d=1; d<=aleatorio; ++d)
+{
+
+   
+
+  if (d==1) {
+    switch (umaData.getDay()){
+     case 0: document.write("<td style='background-color: red;color: white;'>"+ d +"</td>"); break;
+     case 1: document.write("<td></td><td>"+ d +"</td>"); break;
+     case 2: document.write("<td></td><td></td><td>"+ d +"</td>"); break;
+     case 3: document.write("<td></td><td></td><td></td><td>"+ d +"</td>"); break;
+     case 4: document.write("<td></td><td></td><td></td><td></td><td>"+ d +"</td>"); break;
+     case 5: document.write("<td></td><td></td><td></td><td></td><td></td><td>"+ d +"</td>"); break;
+     case 6: document.write("<td></td><td></td><td></td><td></td><td></td><td></td><td>"+ d +"</td>"); break;   
+     }
+  }
+  if (d>1) {
+    
+   switch (umaData.getDay())
+   {
+     case 0: document.write("<td>"+ d +"</td>"); break;
+     case 1: document.write("<td>"+ d +"</td>"); break;
+     case 2: document.write("<td>"+ d +"</td>"); break;
+     case 3: document.write("<td>"+ d +"</td>"); break;
+     case 4: document.write("<td>"+ d +"</td>"); break;
+     case 5: document.write("<td>"+ d +"</td>"); break;
+     case 6: document.write("</tr><tr><td style='background-color: red;color: white;'>"+ d +"</td> </style>"); 
+             break;
+   }
+  }
+
+  document.writeln("</style>");
+
+   document.write("</font>");
+
+   umaData.setDate(d);
+}
+document.write("</table>");
+</script>
+
+</table>
+</body>
+
+</html>
